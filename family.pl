@@ -70,7 +70,7 @@ parant('Forida','Rasel').
 
 parant('Rashu','Shetu').
 parant('Rashu','').
-parant('Rashu','').
+parant('Rashu','Ziyad').
 
 parant('Kushi','Moon').
 parant('Kushi','Mim').
@@ -132,7 +132,7 @@ male('Mirsab').
 male('Mishkat').
 male('Tohid').
 male('Rasel').
-
+male('Ziyad').
 
 
 female('Rabeya').
