@@ -65,11 +65,11 @@ parant('Shopna','Mayrin').
 parant('Shopna','Inaya').
 
 parant('Forida','Tohid').
-parant('Forida','Sohel').
+parant('Forida','Sohid').
 parant('Forida','Rasel').
 
 parant('Rashu','Shetu').
-parant('Rashu','').
+parant('Rashu','Sajid').
 parant('Rashu','Ziyad').
 
 parant('Kushi','Moon').
@@ -133,6 +133,8 @@ male('Mishkat').
 male('Tohid').
 male('Rasel').
 male('Ziyad').
+male('Sajid').
+male('Sohid').
 
 
 female('Rabeya').
@@ -172,8 +174,11 @@ siblings(X,Y):- mother(M,X),father(F,X),mother(M,Y),father(F,Y),X\==Y.
 grandfather(X,Z):-parant(X,Y),parant(Y,Z),male(X).
 grandmother(X,Z):-parant(X,Y),parant(Y,Z),female(X).
 dada(X,Z):- parant(X,Y),parant(Y,Z),male(Y),male(X).
+dadi(X,Z):- parant(X,Y),parant(Y,Z),male(Y),female(X).
 nana(X,Z):- parant(X,Y),parant(Y,Z),female(Y),male(X).
+nani(X,Z):- parant(X,Y),parant(Y,Z),female(Y),female(X).
 chacha(X,Z):- parant(F,Z),siblings(F,X),male(F),male(X).
+chachi(X,Z):- chachatobhai(Y,Z),mother(X,Y).
 fufu(X,Z):- parant(F,Z),siblings(F,X),male(F),female(X).
 mama(X,Z):- parant(F,Z),siblings(F,X),female(F),male(X).
 khala(X,Z):- parant(F,Z),siblings(F,X),female(F),female(X).
