@@ -114,7 +114,19 @@ parant('AbulBashar','Kawsar').
 parant('AbulBashar','Ruksar').
 parant('AbulBashar','Tumpa').
 
-
+husband('Makbul','Rabeya').
+husband('Abdul','Jesmin').
+husband('Zakir','Minu').
+husband('Sattar','Hasna').
+husband('Mahabub','Shopna').
+husband('Mazhar','Forida').
+husband('Yunus','Kushi').
+husband('Aktar','Rashu').
+husband('Harun','Amena').
+husband('Hafez','Joynab').
+husband('Shohel','Urmi').
+husband('AbulBashar','Kamrunnahar').
+husband('MuktarAhmed','Runu').
 
 
 male('Mokbul').
@@ -149,6 +161,7 @@ male('Sohid').
 male('Aktar').
 male('Yunus').
 male('Mazhar').
+male('MuktarAhmed').
 
 
 female('Rabeya').
@@ -185,6 +198,8 @@ female('Shetu').
 mother(X,Y):- parant(X,Y) , female(X).
 father(X,Y):- parant(X,Y) , male(X).
 siblings(X,Y):- mother(M,X),father(F,X),mother(M,Y),father(F,Y),X\==Y.
+brother(X,Y):- siblings(X,Y),male(X).
+sister(X,Y):- siblings(X,Y),female(X).
 grandfather(X,Z):-parant(X,Y),parant(Y,Z),male(X).
 grandmother(X,Z):-parant(X,Y),parant(Y,Z),female(X).
 dada(X,Z):- parant(X,Y),parant(Y,Z),male(Y),male(X).
@@ -195,7 +210,9 @@ chacha(X,Z):- parant(F,Z),siblings(F,X),male(F),male(X).
 chachi(X,Z):- chacha(Y,Z),husband(Y,X).
 fufu(X,Z):- parant(F,Z),siblings(F,X),male(F),female(X).
 mama(X,Z):- parant(F,Z),siblings(F,X),female(F),male(X).
+mami(X,Z):- mama(Y,Z),wife(X,Y).
 khala(X,Z):- parant(F,Z),siblings(F,X),female(F),female(X).
+khalu(X,Z):- khala(Y,Z),husband(X,Y).
 chachatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),male(N),male(X).
 chachatobon(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),male(N),female(X).
 fufatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),female(M),male(N),male(X).
@@ -204,4 +221,6 @@ mamatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),female(N),male(X)
 mamatobon(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),female(N),female(X).
 khalatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),female(M),female(N),male(X).
 khalatobon(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),female(M),female(N),female(X).
-husband(X,Y):- father(X,Z),mother(Y,Z).
+wife(X,Y):- husband(Y,X).
+cousin(X,Y):- parant(M,X),parant(N,Y),siblings(M,N).
+grandchildren(X,Z):- parant(Y,X),parant(Z,Y).
