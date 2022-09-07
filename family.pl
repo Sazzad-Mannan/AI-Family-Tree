@@ -221,6 +221,15 @@ mamatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),female(N),male(X)
 mamatobon(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),male(M),female(N),female(X).
 khalatobhai(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),female(M),female(N),male(X).
 khalatobon(X,Z):-parant(M,X),parant(N,Z),siblings(M,N),female(M),female(N),female(X).
+nonod(X,Y):- husband(Z,Y),sister(X,Z).
+devor(X,Y):- husband(Z,Y),brother(X,Z).
+bhabi(X,Y):- wife(X,Z),siblings(Z,Y).
 wife(X,Y):- husband(Y,X).
 cousin(X,Y):- parant(M,X),parant(N,Y),siblings(M,N).
 grandchildren(X,Z):- parant(Y,X),parant(Z,Y).
+nati(X,Z):- parant(Y,X),parant(Z,Y),male(X).
+natni(X,Z):- parant(Y,X),parant(Z,Y),female(X).
+bhagne(X,Z):- sister(Y,Z),parant(Y,X),male(X).
+bhagni(X,Z):- sister(Y,Z),parant(Y,X),female(X).
+bhatija(X,Z):- brother(Y,Z),parant(Y,X),male(X).
+bhatiji(X,Z):- brother(Y,Z),parant(Y,X),female(X).
