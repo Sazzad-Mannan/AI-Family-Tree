@@ -233,3 +233,7 @@ bhagne(X,Z):- sister(Y,Z),parant(Y,X),male(X).
 bhagni(X,Z):- sister(Y,Z),parant(Y,X),female(X).
 bhatija(X,Z):- brother(Y,Z),parant(Y,X),male(X).
 bhatiji(X,Z):- brother(Y,Z),parant(Y,X),female(X).
+son(X,Y):- parant(Y,X),male(X).
+daughter(X,Y):- parant(Y,X),female(X).
+children(X,Y):- parant(Y,X).
+
